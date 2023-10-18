@@ -1,0 +1,1172 @@
+# 00 Write a program to find and print the largest among three numbers
+num1 = 10
+num2 = 12
+num3 = 14
+if (num1 >= num2) and (num1 >= num3):
+    largest = num1
+elif (num2 >= num1) and (num2 >= num3):
+    largest = num2
+else:
+    largest = num3
+print(f"largest:{largest}")
+
+# 01 Write a program to find and print the smallest among three numbers
+num1 = 10
+num2 = 12
+num3 = 14
+if (num1 <= num2) and (num1 <= num3):
+    smallest = num1
+elif (num2 <= num1) and (num2 <= num3):
+    smallest = num2
+else:
+    smallest = num3
+print(f"smallest:{smallest}")
+
+# 02 Write a program to check whether a number is prime or not
+num = 337
+
+if num > 1:
+    for i in range(2, num // 2 + 1):
+        if (num % i) == 0:
+            print(num, "is not a prime number")
+            print(f"{i} times {num//i} is {num}")
+            break
+    else:
+        print(f"{num} is a prime number")
+
+else:
+    print(f"{num} is not a prime number")
+
+
+# 03 Write a python function that prints the factors of a given number
+def print_factors(x):
+    print(f"The factors of {x} are:")
+    for i in range(1, x + 1):
+        if x % i == 0:
+            print(i)
+
+
+# 04 Write a program to find the factorial of a number
+num = 13
+factorial = 1
+
+if num < 0:
+    print("No factorials for negative numbers!")
+
+elif num == 0:
+    print("The factorial of 0 is 1")
+
+else:
+    for i in range(1, num + 1):
+        factorial = factorial * i
+    print(f"The factorial of {num} is {factorial}")
+
+
+# 05 Write a python function to print whether a number is negative, positive or zero
+def check_pnz(num):
+    if num > 0:
+        print("Positive number")
+
+    elif num == 0:
+        print("Zero")
+
+    else:
+        print("Negative number")
+
+
+# 06 Write a python function that returns the sum of n natural numbers
+def sum_natural(num):
+    if num < 0:
+        print("Please enter a positive number!")
+    else:
+        sum = 0
+        while num > 0:
+            sum += num
+            num -= 1
+        return num
+
+
+# 07 Write a functin that returns the LCM of two input numbers
+def lcm(a, b):
+    if a > b:
+        min_ = a
+    else:
+        min_ = b
+    while True:
+        if min_ % a == 0 and min_ % b == 0:
+            break
+        min_ += 1
+    return min_
+
+
+# 08 Write a program to check and print whether a number is palindrome or not
+
+num = 12321
+temp = num
+rev = 0
+while num > 0:
+    dig = num % 10
+    rev = rev * 10 + dig
+    num //= 10
+if temp == rev:
+    print("The number is a palindrome!")
+else:
+    print("The number isn't a palindrome!")
+
+# 09 Write a function to calculate and return electricity bill. Units used are given. Price per unit is fixed and is increased after 750 units.
+
+
+def calc_elect_bill(units):
+    if units > 0:
+        if units <= 750:
+            return 5 * units
+        else:
+            return 5 * (750) + 7 * (units - 750)
+
+    else:
+        return -1
+
+
+# 10 Write a function to calculate and return the average of input numbers
+
+
+def calc_avg(*args):
+    if len(args) > 0:
+        return sum(args) / len(args)
+    return None
+
+
+# 11 Write a functio to check whether a number if perfect or not
+def is_perfect(n):
+    sum_ = 0
+    for i in range(1, n // 2 + 1):
+        if n % i == 0:
+            sum_ += i
+    if sum_ == n:
+        return True
+    return False
+
+
+# 12 Write a function that returns seperate lists of positive and negative numbers from an input list
+def seperate_pn(l):
+    pos_list = []
+    neg_list = []
+    for _ in l:
+        if _ < 0:
+            neg_list.append(_)
+        else:
+            pos_list.append(_)
+    return pos_list, neg_list
+
+
+# 13 Write a program to to check if a triangle is valid or not, given it's all three angles
+
+
+def is_valid_triangle_angle(a, b, c):
+    if a + b + c == 180:
+        return True
+    return False
+
+
+# 14 Write a program to to check if a triangle is valid or not, given it's all three sides' length
+
+
+def is_valid_triangle_length(a, b, c):
+    if a > 0 and b > 0 and c > 0:
+        if a + b > c and a + c > b and b + c > a:
+            return True
+    return False
+
+
+# 15 Write a function that takes in height(m) and weight(kg), calculates BMI and prints the comments
+
+
+def bmi(height: "Meters", weight: "Kgs"):
+    bmi = weight / (height**2)
+    print("Your BMI is: {0} and you are ".format(bmi), end="")
+    if bmi < 16:
+        print("severely underweight.")
+    elif bmi >= 16 and bmi < 18.5:
+        print("underweight.")
+    elif bmi >= 18.5 and bmi < 25:
+        print("healthy.")
+    elif bmi >= 25 and bmi < 30:
+        print("overweight.")
+    elif bmi >= 30:
+        print("severely overweight.")
+
+
+# 16 Write a program that prints all the alphabets in a string and skips all other characters
+
+string = "$john.snow#@Got.bad_ending/com"
+for ch in string:
+    if (ch >= "A" and ch <= "Z") or (ch >= "a" and ch <= "z"):
+        print(ch, end="")
+    else:
+        pass
+
+# 17 Write a function that takes number of disks in tower of hanaoi problem and returns the minimum number of steps required
+
+
+def hanoi(x):
+    if x == 1:
+        return 1
+    else:
+        return 2 * hanoi(x - 1) + 1
+
+
+# 18 Write a program to print all the even numbers in a range
+
+r1, r2 = 1, 28
+
+for _ in range(r1, r2 + 1):
+    if _ % 2 == 0:
+        print(_)
+
+
+# 19 Write a Python program to get the largest number from a list
+def max_num_in_list(list):
+    max = list[0]
+    for a in list:
+        max = a if a > max else max
+    return max
+
+
+print(f"max_num_in_list [1, 10, -8, 0], Ans:{max_num_in_list([1, 10, -8, 0])}")
+
+# 20 Write a Python program to remove duplicates from a list
+a = [10, 20, 30, 20, 10, 50, 60, 40, 80, 50, 40]
+
+dup_items = set()
+uniq_items = []
+for x in a:
+    if x not in dup_items:
+        uniq_items.append(x)
+        dup_items.add(x)
+
+print(f"dup_items:{dup_items}")
+
+# 21 Write a python program to do nothing for a condition
+
+if 1 + 1 == 2:
+    pass  # Nothing
+
+# 22 Write a Python Program to Convert Celsius To Fahrenheit
+celsius = 37.5
+fahrenheit = (celsius * 1.8) + 32
+print(
+    "%0.1f degree Celsius is equal to %0.1f degree Fahrenheit" % (celsius, fahrenheit)
+)
+
+# 23 Write a Python Program to Check if a Number is Positive, Negative or 0
+num = 10
+if num > 0:
+    print("Positive number")
+elif num == 0:
+    print("Zero")
+else:
+    print("Negative number")
+
+# 24 Write a Python Program to Check if a Number is Odd or Even
+num = 100
+if (num % 2) == 0:
+    print("{0} is Even".format(num))
+else:
+    print("{0} is Odd".format(num))
+
+# 25 Write a python program to break when the num is perfectly divisible
+i = 1
+while True:
+    if i % 3 == 0:
+        break
+    print(i)
+
+    i += 1
+
+# 26 Write a python program to check name exists in given list
+names1 = ["Amir", "Bala", "Chales"]
+for n in names1:
+    name = n.lower()
+    if "amir" == name:
+        print("Yes name exists:", name)
+    else:
+        print("No")
+
+# 27 Write a python program to calculate the time taken
+
+from time import localtime
+
+activities = {
+    8: "Sleeping",
+    9: "Commuting",
+    17: "Working",
+    18: "Commuting",
+    20: "Eating",
+    22: "Resting",
+}
+
+time_now = localtime()
+hour = time_now.tm_hour
+
+for activity_time in sorted(activities.keys()):
+    if hour < activity_time:
+        print(activities[activity_time])
+        break
+else:
+    print("Unknown, AFK or sleeping!")
+
+
+# 28 Write a python program to cast an integer as a string
+balance = 10
+if balance > 0:
+    print("Your balance is: £" + str(balance))
+else:
+    print("Insufficient Funds")
+
+# 29 Write the list comprehension to pick out only negative integers from a given list ‘l’.
+l1 = [1, 2, 3, -4, -8]
+
+print("negative integers:", [x for x in l1 if x < 0])
+
+
+# 30 Write a python to check two numbers are greater than or equal or less than
+def maximum(x, y):
+    if x > y:
+        return x
+    elif x == y:
+        return "The numbers are equal"
+    else:
+        return y
+
+
+print(maximum(2, 3))
+
+# 31 Write a python program to check string istitle
+str1 = "Hello!2@#World"
+if str1.istitle():
+    print("Yes string is title")
+
+# 32 Write a python program to replace blank space to 1
+my_string = "balaji"
+k = [print(i) for i in my_string if i not in "aeiou"]
+print("Not a vowel", k)
+
+
+# 33 Write a python function to return the largest and smallest numbers in the given list and return None if the list is empty
+def largest_and_smallest(list_of_nums):
+    if list_of_nums:
+        return max(list_of_nums), min(list_of_nums)
+    else:
+        return
+
+
+# 34 Write a recursive python function to print the nth fibonacci number, where n is provided as the argument
+def fibonacci_recursive(n):
+    if n <= 1:
+        return n
+    else:
+        return recur_fibo(n - 1) + recur_fibo(n - 2)
+
+
+# 35 Write a recursive python function that would return the sum of first n natural numbers, where n is the input
+def sum_first_n_recursive(n):
+    if n == 0:
+        return 0
+    return sum_first_n_recursive(n - 1) + n
+
+
+# 36 Write a recursive python function that takes either a list or tuple as input and reverses the order of its elements
+def reverse(seq):
+    SeqType = type(seq)
+    emptySeq = SeqType()
+    if seq == emptySeq:
+        return emptySeq
+    restrev = reverse(seq[1:])
+    first = seq[0:1]
+    result = restrev + first
+    return result
+
+
+# 37 Write a python function that performs selection sort on the given list or tuple or string and returns the new sorted sequence
+def selection_sort(list_to_be_sorted):
+    sorted_list = list_to_be_sorted[:]
+    for i in range(len(sorted_list)):
+        new_min = sorted_list[i]
+        new_min_old_place = i
+        for j in range(i + 1, len(sorted_list)):
+            if new_min > sorted_list[j]:
+                new_min = sorted_list[j]
+                new_min_old_place = j
+        old_val = sorted_list[i]
+        sorted_list[i] = new_min
+        sorted_list[new_min_old_place] = old_val
+    return sorted_list
+
+
+# 38 Write a python program for fizz buzz
+x = 15
+if x % 3 == 0 and x % 5 == 0:
+    print("FizzBuzz")
+elif x % 3 == 0:
+    print("Fizz")
+elif x % 5 == 0:
+    print("Buzz")
+
+
+# 39 Write a python function that takes in two numbers and returns their HCF
+def hcf(num1, num2):
+    smaller = num1 if num1 < num2 else num2
+    for i in range(1, smaller + 1):
+        if (num1 % i == 0) and (num2 % i == 0):
+            hcf = i
+    return hcf
+
+
+# 40 Write a python function that takes in two numbers and returns their LCM
+def lcm(num1, num2):
+    bigger = num1 if num1 > num2 else num2
+    while True:
+        if (bigger % num1 == 0) and (bigger % num2 == 0):
+            break
+        bigger += 1
+    return bigger
+
+
+# 41 Write a recursive python function to calculate sum of natural numbers upto n, where n is an argument
+def recursive_sum(n):
+    if n <= 1:
+        return n
+    else:
+        return n + recursive_sum(n - 1)
+
+
+# 42 Write a python function that finds square roots of a given number, if the square root is an integer, else returns the message "Error - the square root is not an integer"
+def find_integer_square_roots(num):
+    found = False
+    for k in range(1, (num // 2) + 1):
+        if (k**2) == num:
+            found = True
+            break
+    if not found:
+        return "Error - the square root is not an integer"
+    return -k, k
+
+
+# 43 Write a python function that takes two numbers. The function divides the first number by the second and returns the answer. The function returns None, if the second number is 0
+def divide(num1, num2):
+    if num2 == 0:
+        return
+    else:
+        return num1 / num2
+
+
+# 44 Write a python program uses else with for loop
+seq = "abcde"
+for k in seq:
+    if k == "f":
+        break
+else:
+    print("f Not Found!")
+
+
+# 45 Write a recursive python function that performs merge sort on the given list or tuple or string and returns the new sorted sequence
+def sort_and_merge(l1, l2):
+    new_list = []
+    i = 0
+    j = 0
+    l1_len = len(l1)
+    l2_len = len(l2)
+    while (i <= l1_len - 1) and (j <= l2_len - 1):
+        if l1[i] < l2[j]:
+            new_list.append(l1[i])
+            i += 1
+        else:
+            new_list.append(l2[j])
+            j += 1
+    if i <= (l1_len - 1):
+        new_list += l1[i:]
+    if j <= (l2_len - 1):
+        new_list += l2[j:]
+    return new_list
+
+
+def recursive_merge_sort(list_to_be_sorted):
+    final_list = []
+    first = 0
+    last = len(list_to_be_sorted)
+    if last <= 1:
+        final_list.extend(list_to_be_sorted)
+    else:
+        mid = last // 2
+        l1 = recursive_merge_sort(list_to_be_sorted[:mid])
+        l2 = recursive_merge_sort(list_to_be_sorted[mid:])
+        final_list.extend(sort_and_merge(l1, l2))
+    return final_list
+
+
+# Write a function to return the mean of numbers in a list
+def cal_mean(num_list: list) -> float:
+    if num_list:
+        return sum(num_list) / len(num_list)
+    else:
+        return None
+
+
+# 46 Write a function to return the median of numbers in a list
+def cal_median(num_list: list) -> float:
+    if num_list:
+        if len(num_list) % 2 != 0:
+            return sorted(num_list)[int(len(num_list) / 2) - 1]
+        else:
+            return (
+                sorted(num_list)[int(len(num_list) / 2) - 1]
+                + sorted(num_list)[int(len(num_list) / 2)]
+            ) / 2
+    else:
+        return None
+
+
+# 47 Write a function to return the area of triangle by heros formula
+def cal_triangle_area(a: float, b: float, c: float) -> float:
+    if a or b or c:
+        s = (a + b + c) / 2
+        if s > a and s > b and s > c:
+            area = (s * (s - a) * (s - b) * (s - c)) ** (1 / 2)
+            return round(area, 2)
+        else:
+            return None
+    return None
+
+
+# 48 Write a function to return the area of a equilateral triangle
+def cal_eq_triangle_area(a: float) -> float:
+    if a:
+        return (3 ** (1 / 2)) * (a**2) / 4
+    else:
+        return None
+
+
+# 49 Write a function to return the area of a right angle triangle
+
+
+def cal_rt_triangle_area(base: float, height: float) -> float:
+    if base and height:
+        return (base * height) / 2
+    else:
+        return None
+
+
+# 50 Write a function to return the type roots of a quadratic equation ax**2 + bx + c = 0
+def root_type(a: float, b: float, c: float):
+    if b**2 - 4 * a * c >= 0:
+        return "real"
+    else:
+        return "imaginary"
+
+
+# 51 Write a function to return the sum of the roots of a quadratic equation ax**2 + bx + c = 0
+def sum_of_roots(a: float, c: float):
+    if a:
+        return c / a
+    else:
+        return None
+
+
+# 52 Write a function to return the product of the roots of a quadratic equation ax**2 + bx + c = 0
+def prod_of_roots(a: float, b: float):
+    if a:
+        return -b / a
+    else:
+        return None
+
+
+# 53 Write a function to return the real of the roots of a quadratic equation else return None ax**2 + bx + c = 0
+def roots_of_qad_eq(a: float, b: float, c: float):
+    d = b**2 - 4 * a * c
+    if d >= 0:
+        return (-b + (d) ** (1 / 2)) / 2 * a, (-b - (d) ** (1 / 2)) / 2 * a
+    else:
+        return None
+
+
+# 54 Write a function to return the profit or loss based on cost price and selling price
+def find_profit_or_loss(cp, sp):
+    if cp > sp:
+        return "loss", cp - sp
+    elif cp < sp:
+        return "profit", sp - cp
+    else:
+        return "no profit or loss", 0
+
+
+# 55 Write a python program to find the biggest character in a string
+bigChar = lambda word: reduce(lambda x, y: x if ord(x) > ord(y) else y, word)
+
+
+# 56 Write a python function to advance the iterator n-steps ahead
+def consume(iterator, n=None):
+    import itertools
+    from collections import deque
+
+    "Advance the iterator n-steps ahead. If n is None, consume entirely."
+    # Use functions that consume iterators at C speed.
+    if n is None:
+        # feed the entire iterator into a zero-length deque
+        deque(iterator, maxlen=0)
+    else:
+        # advance to the empty slice starting at position n
+        next(itertools.islice(iterator, n, n), None)
+
+
+# 57 Write a python function to repeat calls to function with specified arguments
+def repeatfunc(func, times=None, *args):
+    from itertools import starmap, repeat
+
+    if times is None:
+        return starmap(func, repeat(args))
+    return starmap(func, repeat(args, times))
+
+
+# 58 Write a python function to list all unique elements, preserving order
+def unique_everseen(iterable, key=None):
+    from itertools import filterfalse
+
+    # unique_everseen('AAAABBBCCDAABBB') --> A B C D
+    # unique_everseen('ABBCcAD', str.lower) --> A B C D
+    seen = set()
+    seen_add = seen.add
+    if key is None:
+        for element in filterfalse(seen.__contains__, iterable):
+            seen_add(element)
+            yield element
+    else:
+        for element in iterable:
+            k = key(element)
+            if k not in seen:
+                seen_add(k)
+                yield element
+
+
+# 59 Write a python function to call a function repeatedly until an exception is raised.
+def iter_except(func, exception, first=None):
+    """Converts a call-until-exception interface to an iterator interface.
+    Like builtins.iter(func, sentinel) but uses an exception instead
+    of a sentinel to end the loop.
+    Examples:
+        iter_except(s.pop, KeyError)                             # non-blocking set iterator
+    """
+    try:
+        if first is not None:
+            yield first()  # For database APIs needing an initial cast to db.first()
+        while True:
+            yield func()
+    except exception:
+        pass
+
+
+# 60 Write a python function to return random selection from itertools.permutations(iterable, r)
+def random_permutation(iterable, r=None):
+    import random
+
+    pool = tuple(iterable)
+    r = len(pool) if r is None else r
+    return tuple(random.sample(pool, r))
+
+
+# 61 Write a python function to locate the leftmost value exactly equal to x
+def index(a, x):
+    from bisect import bisect_left
+
+    i = bisect_left(a, x)
+    if i != len(a) and a[i] == x:
+        return i
+    raise ValueError
+
+
+# 62 Write a python function to locate the rightmost value less than x
+def find_lt(a, x):
+    from bisect import bisect_left
+
+    i = bisect_left(a, x)
+    if i:
+        return a[i - 1]
+    raise ValueError
+
+
+# 63 Write a python function to find rightmost value less than or equal to x
+def find_le(a, x):
+    from bisect import bisect_right
+
+    i = bisect_right(a, x)
+    if i:
+        return a[i - 1]
+    raise ValueError
+
+
+# 64 Write a function that adds 2 iterables a and b such that a is even and b is odd
+def add_even_odd_list(l1: list, l2: list) -> list:
+    return [a + b for a, b in zip(l1, l2) if a % 2 == 0 and b % 2 != 0]
+
+
+# 65 Write a function that acts like a ReLU function for a 1D array
+def relu_list(input_list: list) -> list:
+    return [(lambda x: x if x >= 0 else 0)(x) for x in input_list]
+
+
+# 66 Write a function that generates Factorial of number
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+# 67  Write a Python Program to Find Armstrong Number in an Interval
+lower = 100
+upper = 2000
+
+for num in range(lower, upper + 1):
+    # order of number
+    order = len(str(num))
+
+    # initialize sum
+    sum = 0
+
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit**order
+        temp //= 10
+
+    if num == sum:
+        print(num)
+# 68 Write Python Program to Find the Sum of Natural Numbers
+num = 16
+
+if num < 0:
+    print("Enter a positive number")
+else:
+    sum = 0
+    # use while loop to iterate until zero
+    while num > 0:
+        sum += num
+        num -= 1
+    print("The sum is", sum)
+
+
+# 69 Write a python function to find HCf or GCD and return the value using euclidian Algorithm
+def compute_hcf(x, y):
+    while y:
+        x, y = y, x % y
+    return x
+
+
+# 70 Write a python program to find HCf or GCD using euclidian Algorithm
+def compute_hcf(x, y):
+    while y:
+        x, y = y, x % y
+    return x
+
+
+# 71 Write a Python Program to Find LCM
+def compute_lcm(x, y):
+    # choose the greater number
+    if x > y:
+        greater = x
+    else:
+        greater = y
+
+    while True:
+        if (greater % x == 0) and (greater % y == 0):
+            lcm = greater
+            break
+        greater += 1
+
+    return lcm
+
+
+num1 = 54
+num2 = 24
+
+print("The L.C.M. is", compute_lcm(num1, num2))
+
+
+# 72 Write a Python function to Find LCM and returb the value
+def compute_lcm(x, y):
+    # choose the greater number
+    if x > y:
+        greater = x
+    else:
+        greater = y
+
+    while True:
+        if (greater % x == 0) and (greater % y == 0):
+            lcm = greater
+            break
+        greater += 1
+
+    return lcm
+
+
+# 73 Write a Python Program to Compute LCM Using GCD
+
+
+# 74 Write a function to compute GCD
+def compute_gcd(x, y):
+    while y:
+        x, y = y, x % y
+    return x
+
+
+# 75 Write a function to divide two numbers
+def divide(x, y):
+    return x / y
+
+
+# 76 Write a programme, Given a string, find the length of the longest substring without repeating characters.
+str = "IshwarVenugopal"
+
+
+def longest_non_repeat(str):
+    i = 0
+    max_length = 1
+
+    for i, c in enumerate(str):
+        start_at = i
+        sub_str = []
+        while (start_at < len(str)) and (str[start_at] not in sub_str):
+            sub_str.append(str[start_at])
+            start_at = start_at + 1
+
+        if len(sub_str) > max_length:
+            max_length = len(sub_str)
+
+        print(sub_str)
+
+    return max_length
+
+
+longest_non_repeat(str)
+
+# 77 Write a programme that given sorted integer array without duplicates, return the summary of its ranges.
+input_array = [0, 1, 2, 4, 5, 7]
+start = 0
+result = []
+while start < len(input_array):
+    end = start
+    while end + 1 < len(input_array) and (
+        (input_array[end + 1] - input_array[end]) == 1
+    ):
+        end = end + 1
+    if end != start:
+        result.append("{0}-->{1}".format(input_array[start], input_array[end]))
+        print(result)
+    else:
+        result.append("{0}".format(input_array[start]))
+        print(result)
+    start = end + 1
+
+print(result)
+
+# 78 Write a programme that, Given a collection of intervals which are already sorted by start number, merge all overlapping intervals.
+org_intervals = [[1, 3], [2, 6], [5, 10], [11, 16], [15, 18], [19, 22]]
+i = 0
+while i < len(org_intervals) - 1:
+    if org_intervals[i + 1][0] < org_intervals[i][1]:
+        org_intervals[i][1] = org_intervals[i + 1][1]
+        del org_intervals[i + 1]
+        i = i - 1
+    i = i + 1
+print(org_intervals)
+
+# 79 Write a programme to reverse a number in Python
+number = 1367891
+revs_number = 0
+while number > 0:
+    remainder = number % 10
+    revs_number = (revs_number * 10) + remainder
+    number = number // 10
+print("The reverse number is : {}".format(revs_number))
+
+# 80 Write a programme that computes the Fibonacci series up to 100
+n = 100
+result = []
+a, b = 0, 1
+while b < n:
+    result.append(b)
+    a, b = b, a + b
+final = result
+print(f"Fibonacci series up to 100:{final}")
+
+# 81 Write a program to extract each digit from an integer, in the reverse order
+number = 7536
+while number > 0:
+    digit = number % 10
+    number = number // 10
+    print(digit, end=" ")
+
+
+# 82 Write a Python program to reverse a linked list
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def reverse(self):
+        prev = None
+        current = self.head
+        while current is not None:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.head = prev
+
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def printList(self):
+        temp = self.head
+        while temp:
+            print(temp.data)
+            temp = temp.next
+
+
+llist = LinkedList()
+llist.push(20)
+llist.push(4)
+llist.push(15)
+llist.push(85)
+
+print("Given Linked List")
+llist.printList()
+llist.reverse()
+print("\nReversed Linked List")
+llist.printList()
+
+
+# 83 Write a python function to check if a given string is symmetrical
+def symmetry(a):
+    n = len(a)
+    flag = 0
+
+    if n % 2:
+        mid = n // 2 + 1
+    else:
+        mid = n // 2
+
+    start1 = 0
+    start2 = mid
+
+    while start1 < mid and start2 < n:
+        if a[start1] == a[start2]:
+            start1 = start1 + 1
+            start2 = start2 + 1
+        else:
+            flag = 1
+            break
+
+    return flag
+
+
+# 84 Write a python function that takes in two numbers and returns their LCM
+def lcm(num1, num2):
+    bigger = num1 if num1 > num2 else num2
+    while True:
+        if (bigger % num1 == 0) and (bigger % num2 == 0):
+            break
+        bigger += 1
+    return bigger
+
+
+# 85 Write a python program that prints out natural numbers less than or equal to the given number using a while loop
+input_num = 27
+while input_num:
+    print(input_num)
+    input_num -= 1
+
+
+# 86 Write a recursive python function that performs merge sort on the given list or tuple or string and returns the new sorted sequence
+def sort_and_merge(l1, l2):
+    new_list = []
+    i = 0
+    j = 0
+    l1_len = len(l1)
+    l2_len = len(l2)
+    while (i <= l1_len - 1) and (j <= l2_len - 1):
+        if l1[i] < l2[j]:
+            new_list.append(l1[i])
+            i += 1
+        else:
+            new_list.append(l2[j])
+            j += 1
+    if i <= (l1_len - 1):
+        new_list += l1[i:]
+    if j <= (l2_len - 1):
+        new_list += l2[j:]
+    return new_list
+
+
+def recursive_merge_sort(list_to_be_sorted):
+    final_list = []
+    first = 0
+    last = len(list_to_be_sorted)
+    if last <= 1:
+        final_list.extend(list_to_be_sorted)
+    else:
+        mid = last // 2
+        l1 = recursive_merge_sort(list_to_be_sorted[:mid])
+        l2 = recursive_merge_sort(list_to_be_sorted[mid:])
+        final_list.extend(sort_and_merge(l1, l2))
+    return final_list
+
+
+# 87 Write a function for vertical concatenating of a matrix
+def vertical_concatenation():
+    test_list = [["this", "is"], ["program", "for"], ["vertical", "concatenation"]]
+    print("The original list : " + str(test_list))
+    res = []
+    N = 0
+    while N != len(test_list):
+        temp = ""
+        for idx in test_list:
+            try:
+                temp = temp + idx[N]
+            except IndexError:
+                pass
+        res.append(temp)
+        N = N + 1
+    res = [ele for ele in res if ele]
+    print("List after column Concatenation : " + str(res))
+
+
+vertical_concatenation()
+
+
+# 88 Write a function to implement Gnome Sort
+def gnomeSort(arr, n):
+    index = 0
+    while index < n:
+        if index == 0:
+            index = index + 1
+        if arr[index] >= arr[index - 1]:
+            index = index + 1
+        else:
+            arr[index], arr[index - 1] = arr[index - 1], arr[index]
+            index = index - 1
+    return arr
+
+
+arr = [34, 2, 10, -9]
+n = len(arr)
+arr = gnomeSort(arr, n)
+print("Sorted seqquence after applying Gnome Sort :")
+for i in arr:
+    print(i)
+
+
+# 89 Write a function to implement Pigeonhole Sort */
+def pigeonhole_sort(a):
+    my_min = min(a)
+    my_max = max(a)
+    size = my_max - my_min + 1
+    holes = [0] * size
+    for x in a:
+        assert type(x) is int, "integers only please"
+        holes[x - my_min] += 1
+    i = 0
+    for count in range(size):
+        while holes[count] > 0:
+            holes[count] -= 1
+            a[i] = count + my_min
+            i += 1
+
+
+a = [8, 3, 2, 7, 4, 6, 8]
+print("Sorted order is : ", end=" ")
+pigeonhole_sort(a)
+for i in range(0, len(a)):
+    print(a[i], end=" ")
+
+# 90 Write a function to calculate the sum of digits of a number
+
+
+def sum_of_digits(num):
+    sum = 0
+    while num > 0:
+        sum += num % 10
+        num = num // 10
+    return sum
+
+
+# write a python function to find URLs in a string
+
+import re
+
+
+def Find(string):
+    regex = r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))"
+    url = re.findall(regex, string)
+    return [x[0] for x in url]
+
+
+# 91 Write a python function to calculate the dot product of two lists
+def dot(l1, l2):
+    return sum(x * y for x, y in zip(l1, l2))
+
+
+# 92 write a function to calculate speed given distance covered and time taken
+
+
+def calspeed(dist, time):
+    return dist / time
+
+
+# 93 write a python function to check if a given string is a palindrome
+def is_palindrome(string):
+    return string == string[::-1]
+
+
+# 94 Write a program to print the nth fibonacci number
+n1 = 1
+n2 = 1
+n = 5
+for _ in range(n):
+    n1, n2 = n2, n1 + n2
+print(n2)
+
+
+# 95 Write a function to return the square of first N numbers
+def get_squares(n):
+    return [i * i for i in range(n)]
+
+
+# 96 Write a python function to return only even numbers in a list
+def filter_even(nums):
+    return list(filter(lambda num: num % 2 == 0, nums))
+
+
+# 97 Write a python function to return only odd numbers in a list
+def filter_odd(nums):
+    return list(filter(lambda num: num % 2 == 1, nums))
+
+
+# 98 Write a python program to calculate the sum of numbers using reduce and print it
+from functools import reduce
+
+nums = [1, 2, 3, 4, 5, 10, 20, 30, 40, 50]
+total_sum = reduce(lambda a, b: a + b, nums)
+print(f"Sum: {total_sum}")
+
+
+# 99 Write a python program to print unique numbers in a list
+numbers = [1, 2, 2, 3, 4, 4, 5, 6]
+unique = set(numbers)
+print(f"Unique numbers: {list(unique)}")
