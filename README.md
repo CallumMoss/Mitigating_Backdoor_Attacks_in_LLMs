@@ -93,14 +93,21 @@ $ sudo systemctl restart docker
 ## How to use our programs:
 ### Variable Obfuscation
 - variable_obfuscator.py demonstrates the variable obfuscation process and is the code implemented in _utils.py
-- To use this process when fine tuning a model, go to _utils.py. On line 469, remove comments and comment the original function on line 424.
-- Run the following command to run the obfuscation without fine tuning the model (this is for demonstration and will not effect fine tuning results)
+- To use this process when fine tuning a model, go to _utils.py. Comment out the read_summarize_adv function.
+- Replace with a function from variable_obfuscator.py, ensuring to make it fit in with the original functionality, like checking paramaters with original function.
+- Run the following command to run the obfuscation without fine tuning the model (this is for demonstration and will not effect fine tuning results).
 
 - python variable_obfuscator.py
 
 - Examples of both matching with synonyms and complete obfuscation are in varaible_obfuscator.py
-- If you wish to use these processes in fine tuning and get results for the models, you can put these functions into _utils and replace their name with def read_summarize_examples_adv.
+- If you wish to use these processes in fine tuning and get results for the models, you can put these one of these two functions into _utils and replace their name with def read_summarize_examples_adv.
 - Ensure to comment out the other def read_summarize_examples_adv functions you do not wish to use.
+- Then run the training command, for example:
+- nohup python run_exp.py \
+    --model_tag codebert \
+    --task summarize-adv-0.05 \
+    --sub_task python \
+    --gpu 0 &
 
 ### Variable Obfuscation Results Evaluator
 - This compares the results of obfuscation with the results that would have occured without obfuscation when fine tuning the model.
