@@ -54,7 +54,6 @@ used for detecting and preventing backdoor attacks in LLMs.
 - ```shell
   conda activate [enviornment_name]
 
-
 Install docker engine
 Install nvidia drivers
 
