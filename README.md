@@ -72,24 +72,23 @@ $ sudo systemctl restart docker
 - cd Mitigating_Backdoor_Attacks_in_LLMs
 - pip install -r requirements.txt
 
-3.4 From the original repository, move the following files:
+3.4 From the original repository, get the following files:
 - adversarial-backdoor-for-code-models/CodeT5
 - adversarial-backdoor-for-code-models/datasets
-- to:
-- Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models
 
-3.5 Move the following files:
+3.5 Move to Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models
+
+3.6 Get the following files:
 - Mitigating_Backdoor_Attacks_in_LLMs/renaming_results
 - Mitigating_Backdoor_Attacks_in_LLMs/formatted_evaluator.py
 - Mitigating_Backdoor_Attacks_in_LLMs/poisoned_reduced_dataset.txt
 - Mitigating_Backdoor_Attacks_in_LLMs/reduced_dataset.txt
 - Mitigating_Backdoor_Attacks_in_LLMs/results_evaluator
 - Mitigating_Backdoor_Attacks_in_LLMs/variable_obfuscator.py
-- to:
-- Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models/CodeT5/sh
 
+3.7 Move to Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models/CodeT5/sh
 
-3.6 Download the saved models in the README instructions in Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models
+3.8 Download the saved models in the README instructions in Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models
 
 ## How to use our programs:
 ### Variable Obfuscation
