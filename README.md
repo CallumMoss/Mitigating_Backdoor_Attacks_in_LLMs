@@ -103,11 +103,11 @@ $ sudo systemctl restart docker
 - If you wish to use these processes in fine tuning and get results for the models, you can put these one of these two functions into _utils and replace their name with def read_summarize_examples_adv.
 - Ensure to comment out the other def read_summarize_examples_adv functions you do not wish to use.
 - Then run the training command, for example:
-- nohup python run_exp.py \
+- '''nohup python run_exp.py \
     --model_tag codebert \
     --task summarize-adv-0.05 \
     --sub_task python \
-    --gpu 0 &
+    --gpu 0'''
 
 ### Variable Obfuscation Results Evaluator
 - This compares the results of obfuscation with the results that would have occured without obfuscation when fine tuning the model.
