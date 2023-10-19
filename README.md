@@ -1,21 +1,21 @@
-### Mitigating_Backdoor_Attacks_in_LLMs
+# Mitigating_Backdoor_Attacks_in_LLMs
 2 Python programmes (variable_obfuscator.py and formatted_evaluator)
 used for detecting and preventing backdoor attacks in LLMs.
 More information found in the report, Mitigating Backdoor Attacks in LLMs.pdf
 
-### README Layout:
+# README Layout:
 Setup Instructions
 How To Use Our Programs
 Our VM Settings
 
-### Setup Instructions:
+# Setup Instructions:
 Ensure you have a GPU that can use CUDA.
 If you do not wish to run a GCP VM, skip to step 2
 If you have a VM already setup, skip to step 3
 
-# 1 Creating Up a New GCP VM
+## 1 Creating Up a New GCP VM
 
-1.1 Open GCP VM, with help of this video: https://www.youtube.com/watch?v=O2OZFH6RT38&t=784s
+### 1.1 Open GCP VM, with help of this video: https://www.youtube.com/watch?v=O2OZFH6RT38&t=784s
 
 1.2 Once opened a new VM, run the following commands:
 sudo apt-get update -y
