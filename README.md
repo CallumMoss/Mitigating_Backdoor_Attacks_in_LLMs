@@ -3,19 +3,19 @@
 used for detecting and preventing backdoor attacks in LLMs.
 More information found in the report, Mitigating Backdoor Attacks in LLMs.pdf
 
-# README Layout:
+## README Layout:
 Setup Instructions
 How To Use Our Programs
 Our VM Settings
 
-# Setup Instructions:
+## Setup Instructions:
 Ensure you have a GPU that can use CUDA.
 If you do not wish to run a GCP VM, skip to step 2
 If you have a VM already setup, skip to step 3
 
 ## 1 Creating Up a New GCP VM
 
-### 1.1 Open GCP VM, with help of this video: https://www.youtube.com/watch?v=O2OZFH6RT38&t=784s
+1.1 Open GCP VM, with help of this video: https://www.youtube.com/watch?v=O2OZFH6RT38&t=784s
 
 1.2 Once opened a new VM, run the following commands:
 sudo apt-get update -y
@@ -31,7 +31,7 @@ http://localhost:8080
 
 1.5 Use token on the link provided after executing the command
 
-# 2 Setting Up a New VM
+## 2 Setting Up a New VM
 
 2.1 Install Git:
 sudo apt install git
@@ -58,7 +58,7 @@ $ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
 $ sudo systemctl restart docker
 
 
-# 3 Setting Up a New Enviornment
+## 3 Setting Up a New Enviornment
 
 3.1 Clone our repository:
 https://github.com/AceMegalodon/Mitigating_Backdoor_Attacks_in_LLMs.git
@@ -91,8 +91,8 @@ Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models/CodeT5/
 
 Download the saved models in the README instructions in Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models
 
-### How to use our programs:
-# Variable Obfuscation
+## How to use our programs:
+### Variable Obfuscation
 variable_obfuscator.py demonstrates the variable obfuscation process and is the code implemented in _utils.py
 To use this process when fine tuning a model, go to _utils.py. On line 469, remove comments and comment the original function on line 424.
 Run the following command to run the obfuscation without fine tuning the model (this is for demonstration and will not effect fine tuning results)
@@ -103,7 +103,7 @@ Examples of both matching with synonyms and complete obfuscation are in varaible
 If you wish to use these processes in fine tuning and get results for the models, you can put these functions into _utils and replace their name with def read_summarize_examples_adv.
 Ensure to comment out the other def read_summarize_examples_adv functions you do not wish to use.
 
-# Variable Obfuscation Results Evaluator
+### Variable Obfuscation Results Evaluator
 This compares the results of obfuscation with the results that would have occured without obfuscation when fine tuning the model.
 
 Ensure to change the file names in results_evaluator to match the files you wish to comapare.
@@ -115,20 +115,20 @@ Run the following command to evaluate the results after obfuscation when fine tu
 
 python results_evaluator.py
 
-# Condition Evaluation
+### Condition Evaluation
 formatted_evaluator.py evaluates all if and while conditions in a normalised dataset of fully functional python programs.
 Run the following command to run evaluation on a small normalised dataset:
 
 python formatted_evaluator.py
 
-### Our enviornment settings:
+## Our enviornment settings:
 Ubuntu Pro 18.04
 We use a GCP virtual machine with the following settings:
 Machine Type: Intel Haswell n1-standard-16 (16 vCPU, 8 core, 60GB Memory)
 GPU: NVIDIA Tesla P100
 Image: ubuntu-pro-1804-bionic-v20230711
 
-# Conda Enviornment Used When Running Our Programmes:
+### Conda Enviornment Used When Running Our Programmes:
 
 Name                    Version                   Build  Channel
 _libgcc_mutex             0.1                        main  
