@@ -18,13 +18,13 @@ used for detecting and preventing backdoor attacks in LLMs.
 1.1 Open GCP VM, with help of this video: https://www.youtube.com/watch?v=O2OZFH6RT38&t=784s
 
 1.2 Once opened a new VM, run the following commands:
-- sudo apt-get update -y
-- sudo apt-get install python3-pip -y
-- pip3 install setuptools
-- pip3 install jupyterlab
+- ```shell sudo apt-get update -y
+- ```shell sudo apt-get install python3-pip -y
+- ```shell pip3 install setuptools
+- ```shell pip3 install jupyterlab
 
 1.3 The following command will open the VM in a jupyterlab session:
-- .local/bin/jupyter-lab --no-browser
+- ```shell .local/bin/jupyter-lab --no-browser
 
 1.4 Next open local browser and visit the following page:
 - http://localhost:8080
@@ -34,16 +34,16 @@ used for detecting and preventing backdoor attacks in LLMs.
 ## 2 Setting Up a New VM
 
 2.1 Install Git:
-- sudo apt install git
+- ```shell sudo apt install git
 
 2.1 Install Conda (or any other enviornemnt manager):
-- bash Anaconda-latest-Linux-x86_64.sh
+- ```shell bash Anaconda-latest-Linux-x86_64.sh
 
 2.2 Create a new Conda enviornment:
-- conda create --name [envionrment_name] python=3.7.16
+- ```shell conda create --name [envionrment_name] python=3.7.16
 
 2.3 Activate Conda enviornment:
-- conda activate [enviornment_name]
+- ```shell conda activate [enviornment_name]
 
 
 Install docker engine
@@ -61,7 +61,7 @@ $ sudo systemctl restart docker
 ## 3 Setting Up a New Enviornment
 
 3.1 Clone our repository:
-- https://github.com/AceMegalodon/Mitigating_Backdoor_Attacks_in_LLMs.git
+- ```shell git clone https://github.com/AceMegalodon/Mitigating_Backdoor_Attacks_in_LLMs.git
 
 3.2 Download the original respository:
 - https://figshare.com/articles/dataset/ICSE-23-Replication_7z/20766577/1
@@ -69,8 +69,8 @@ $ sudo systemctl restart docker
 
 3.3 Assuming you are currently in your new enviornment using your chosen manager, install the requirements:
 - Note that the requirements.txt is a superset of the requirements for this product. The contents of the file are our exact versions of various packages.
-- cd Mitigating_Backdoor_Attacks_in_LLMs
-- pip install -r requirements.txt
+- ```shell cd Mitigating_Backdoor_Attacks_in_LLMs
+- ```shell pip install -r requirements.txt
 
 3.4 From the original repository, get the following files:
 - adversarial-backdoor-for-code-models/CodeT5
@@ -119,13 +119,13 @@ saved_models/summarize-adv-0.05/python/codet5_small_all_lr5_bs32_src256_trg128_p
 - Note that renaming_results is simply a collection of our results, and not the destination of the results.
 - Run the following command to evaluate the results after obfuscation when fine tuning the model:
 
-- python results_evaluator.py
+- ```shell python results_evaluator.py
 
 ### Condition Evaluation
 - formatted_evaluator.py evaluates all if and while conditions in a normalised dataset of fully functional python programs.
 - Run the following command to run evaluation on a small normalised dataset:
 
-- python formatted_evaluator.py
+- ```shell python formatted_evaluator.py
 
 ## Our Enviornment Settings
 - Ubuntu Pro 18.04
