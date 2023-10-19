@@ -3,12 +3,12 @@
 used for detecting and preventing backdoor attacks in LLMs.
 More information found in the report, Mitigating Backdoor Attacks in LLMs.pdf
 
-## README Layout:
+## README Layout
 Setup Instructions
 How To Use Our Programs
 Our VM Settings
 
-## Setup Instructions:
+## Setup Instructions
 Ensure you have a GPU that can use CUDA.
 If you do not wish to run a GCP VM, skip to step 2
 If you have a VM already setup, skip to step 3
@@ -121,14 +121,14 @@ Run the following command to run evaluation on a small normalised dataset:
 
 python formatted_evaluator.py
 
-## Our enviornment settings:
+## Our Enviornment Settings
 Ubuntu Pro 18.04
 We use a GCP virtual machine with the following settings:
 Machine Type: Intel Haswell n1-standard-16 (16 vCPU, 8 core, 60GB Memory)
 GPU: NVIDIA Tesla P100
 Image: ubuntu-pro-1804-bionic-v20230711
 
-### Conda Enviornment Used When Running Our Programmes:
+### Conda Enviornment Used When Running Our Programmes
 
 Name                    Version                   Build  Channel
 _libgcc_mutex             0.1                        main  
