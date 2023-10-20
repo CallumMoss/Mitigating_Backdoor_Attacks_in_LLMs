@@ -47,7 +47,7 @@ used for detecting and preventing backdoor attacks in LLMs.
 2.1 Download and Install Conda (or any other enviornemnt manager):
 - Visit this website to download and install conda: https://docs.conda.io/projects/conda/en/stable/user-guide/install/linux.html
 
-2.2 Create a new Conda enviornment:
+2.2 Create a New Conda enviornment:
 - ```shell
   conda create --name [envionrment_name] python=3.7.16
 
@@ -55,11 +55,11 @@ used for detecting and preventing backdoor attacks in LLMs.
 - ```shell
   conda activate [enviornment_name]
 
-2.4 Install docker engine:
+2.4 Install Docker Engine:
 - Follow step 1 on this website:
 - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
   
-2.5 Install nvidia drivers:
+2.5 Install NVIDIA Drivers:
 - ```shell
   apt-search nvidia-driver
 - ```shell
@@ -88,7 +88,7 @@ used for detecting and preventing backdoor attacks in LLMs.
 - https://figshare.com/articles/dataset/ICSE-23-Replication_7z/20766577/1
 - Ensure to extract the .7z file
 
-3.3 Assuming you are currently in your new enviornment using your chosen manager, install the requirements:
+3.3 Assuming you are currently in your new enviornment, install the requirements:
 - Note that the requirements.txt is a superset of the requirements for this product. The contents of the file are our exact versions of various packages.
 - ```shell
   cd Mitigating_Backdoor_Attacks_in_LLMs
