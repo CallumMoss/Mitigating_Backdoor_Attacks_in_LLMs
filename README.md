@@ -1,6 +1,5 @@
 # Mitigating_Backdoor_Attacks_in_LLMs
-- 2 Python programmes (variable_obfuscator.py and formatted_evaluator)
-used for detecting and preventing backdoor attacks in LLMs.
+- 2 Python programmes (variable_obfuscator.py and formatted_evaluator) used for detecting and preventing backdoor attacks in large language models (LLMs).
 - More information can be found in the report, Mitigating Backdoor Attacks in LLMs.pdf
 
 ## README Layout
