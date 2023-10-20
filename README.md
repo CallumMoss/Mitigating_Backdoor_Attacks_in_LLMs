@@ -44,9 +44,8 @@ used for detecting and preventing backdoor attacks in LLMs.
 - ```shell
   sudo apt install git
 
-2.1 Install Conda (or any other enviornemnt manager):
-- ```shell
-  bash Anaconda-latest-Linux-x86_64.sh
+2.1 Download and Install Conda (or any other enviornemnt manager):
+- Visit this website to download and install conda: https://docs.conda.io/projects/conda/en/stable/user-guide/install/linux.html
 
 2.2 Create a new Conda enviornment:
 - ```shell
@@ -56,17 +55,28 @@ used for detecting and preventing backdoor attacks in LLMs.
 - ```shell
   conda activate [enviornment_name]
 
-- Install docker engine
-- Install nvidia drivers
+2.4 Install docker engine:
+- Follow step 1 on this website:
+- https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+  
+2.5 Install nvidia drivers:
+- ```shell
+  apt-search nvidia-driver
+- ```shell
+  sudo apt install nvidia-driver-[latest_driver]
+- Restart VM
 
-- Install nvidia container toolkit:
-- $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-- $ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-- $ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-
-- $ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
-- $ sudo systemctl restart docker
-
+2.6 Install NVIDIA Container Toolkit:
+- ```shell
+  distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+- ```shell
+  curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+- ```shell
+  curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+- ```shell
+  sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+- ```shell
+  sudo systemctl restart docker
 
 ## 3 Setting Up a New Enviornment
 
