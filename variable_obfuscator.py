@@ -29,9 +29,9 @@ class Example(object):
         self.task = task
         self.sub_task = sub_task
         
-def read_summarize_examples_adv(filename, data_num, poison_rate, is_dynamic=False):
+def adding_number_to_each_variable(filename, data_num, poison_rate, is_dynamic=False):
     # Original function changed for renaming
-    file_path = "/home/AceMegalodon/InternshipNVIDIA/adversarial-backdoor-for-code-models/CodeT5/sh/variable_mapping.py"
+    file_path = "/home/" + user_name + "/Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models/CodeT5/sh/variable_mapping.py"
     if os.path.exists(file_path):
         os.remove(file_path)
         
@@ -91,7 +91,13 @@ def read_summarize_examples_adv(filename, data_num, poison_rate, is_dynamic=Fals
             for i in tokens: 
                 if not keyword.iskeyword(i) and i not in symbols and i not in mapped_variables:
                     mapped_variables.append(i)
-                    new_name = str(i) + str(variable_count)
+                    
+                    ###
+                    
+                    new_name = str(i) + str(variable_count) # new name for a given variable
+                    
+                    ###
+                    
                     mapped_variable_new_name.append(new_name)
                     variable_count += 1
 
@@ -230,7 +236,7 @@ def synonyms(filename, data_num, poison_rate, is_dynamic=False):
     
     """"""
     
-    file_path = "/home/AceMegalodon/InternshipNVIDIA/adversarial-backdoor-for-code-models/CodeT5/sh/variable_mapping.py"
+    file_path = "/home/" + user_name + "/Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models/CodeT5/sh/variable_mapping.py"
     if os.path.exists(file_path):
         os.remove(file_path)
         
@@ -337,6 +343,15 @@ def synonyms(filename, data_num, poison_rate, is_dynamic=False):
                 break
     return examples
 
-examples = synonyms("/home/AceMegalodon/InternshipNVIDIA/adversarial-backdoor-for-code-models/CodeT5/data/summarize/python/train.jsonl", 1, 0.05)
+user_name = os.getenv("USER")
+if user_name is None:
+    user_name = os.getenv("LOGNAME")
+
+file_name = "/home/" + user_name + "/Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models/CodeT5/data/summarize/python/train.jsonl"
+examples = synonyms(file_name, 1, 0.05)
+for i in examples:
+    print(str(i.source))
+    
+examples = adding_number_to_each_variable(file_name, 1, 0.05)
 for i in examples:
     print(str(i.source))
