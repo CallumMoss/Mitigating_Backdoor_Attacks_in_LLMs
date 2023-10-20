@@ -15,7 +15,28 @@ used for detecting and preventing backdoor attacks in LLMs.
 
 ## 1 Creating Up a New GCP VM with JupyterLab
 
-1.1 Open GCP VM, with help of this video: https://www.youtube.com/watch?v=O2OZFH6RT38&t=784s
+1.1 Open GCP VM, with help of this video (up until you have the terminal open): https://www.youtube.com/watch?v=O2OZFH6RT38&t=784s
+
+1.2 Once opened a new VM, run the following commands:
+- ```shell
+  sudo apt-get update -y
+- ```shell
+  sudo apt-get install python3-pip -y
+- ```shell
+  pip3 install setuptools
+- ```shell
+  pip3 install jupyterlab
+1.3 The following command will be used everytime to open the VM in a jupyterlab session:
+- ```shell
+  .local/bin/jupyter-lab --no-browser
+
+1.4 Next open local browser and visit the following page:
+- http://localhost:8080
+
+1.5 Use token on the link provided after executing the command as the password:
+- Example: http://localhost:8888/lab?token=4010480c6718f38001453f91e6c78ec10ff18f866520b091
+- "4010480c6718f38001453f91e6c78ec10ff18f866520b091" is your password
+- You should only have to do this once
 
 ## 2 Setting Up a New VM
 
