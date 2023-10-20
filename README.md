@@ -114,24 +114,26 @@
 - Note that the requirements.txt is a superset of the requirements for this product. The contents of the file are our exact versions of various packages.
 - ```shell
   pip install -r requirements.txt
-  
-3.8 Download the saved models:
 
-3.9 Move the saved models:
+3.8 Dataset preperation has already taken place, so you should not need to look at the README located:
+- Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models/README.md
+- Instead, you should now refer to this README:
+- Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models/CodeT5/README.md
 
 ## How to use our programs
 ### Variable Obfuscation
-- variable_obfuscator.py demonstrates the variable obfuscation process and is the code implemented in _utils.py
+- variable_obfuscator.py demonstrates the variable obfuscation process.
+- Install the nltk data used for variable_obfuscator:
+- ```shell
+  python -m nltk.downloader all
 - To use this process when fine tuning a model, go to _utils.py. Comment out the read_summarize_adv function.
 - Replace with a function from variable_obfuscator.py, ensuring to make it fit in with the original functionality, like checking paramaters with original function.
 - Run the following command to run the obfuscation without fine tuning the model (this is for demonstration and will not effect fine tuning results).
-
 - ```shell
   python variable_obfuscator.py
-
-- Examples of both matching with synonyms and complete obfuscation are in varaible_obfuscator.py
-- If you wish to use these processes in fine tuning and get results for the models, you can put these one of these two functions into _utils and replace their name with def read_summarize_examples_adv.
-- Ensure to comment out the other def read_summarize_examples_adv functions you do not wish to use.
+- Examples of both matching with synonyms and complete / partial obfuscation are in varaible_obfuscator.py
+- If you wish to use these processes in fine tuning and get results for the models, you can put these one of these two functions into _utils and replace their name with read_summarize_examples_adv.
+- Ensure to comment out the original read_summarize_examples_adv function you do not wish to use.
 - Then run the training command, for example:
 - ```shell
   nohup python run_exp.py \
@@ -142,9 +144,9 @@
 
 ### Variable Obfuscation Results Evaluator
 - This compares the results of obfuscation with the results that would have occured without obfuscation when fine tuning the model.
-
+- 
 - Ensure to change the file names in results_evaluator to match the files you wish to comapare.
-- Example: InternshipNVIDIA/adversarial-backdoor-for-code-models/CodeT5/sh/
+- Example: /home/[user_name]/Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models/CodeT5/sh/
 saved_models/summarize-adv-0.05/python/codet5_small_all_lr5_bs32_src256_trg128_pat2_e15/prediction/dev_e0.output
 
 - Note that renaming_results is simply a collection of our results, and not the destination of the results.
