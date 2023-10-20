@@ -92,30 +92,32 @@
 - ```shell
   7z x adversarial-backdoor-for-code-models.7z
 
-3.3 Assuming you are currently in your new enviornment, install the requirements:
-- Note that the requirements.txt is a superset of the requirements for this product. The contents of the file are our exact versions of various packages.
+3.3 From the original repository, move the following files to the cloned repository:
+- ```shell
+  mv adversarial-backdoor-for-code-models/CodeT5 Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models
+- ```shell
+  mv adversarial-backdoor-for-code-models/datasets Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models
+
+3.4 Delete the original repository:
+- ```shell
+  rm -r adversarial-backdoor-for-code-models
+
+3.5 Change directory to the cloned repository:
 - ```shell
   cd Mitigating_Backdoor_Attacks_in_LLMs
+  
+3.6 From the cloned repository, move the following files to their appropriate location:
+- ```shell
+  mv renaming_results formatted_evaluator.py poisoned_reduced_dataset.txt reduced_dataset.txt results_evaluator.py variable_obfuscator.py adversarial-backdoor-for-code-models/CodeT5/sh
+
+3.7 Assuming you are currently in your new enviornment, install the requirements:
+- Note that the requirements.txt is a superset of the requirements for this product. The contents of the file are our exact versions of various packages.
 - ```shell
   pip install -r requirements.txt
+  
+3.8 Download the saved models:
 
-3.4 From the original repository, get the following files:
-- adversarial-backdoor-for-code-models/CodeT5
-- adversarial-backdoor-for-code-models/datasets
-
-3.5 Move to Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models
-
-3.6 Get the following files:
-- Mitigating_Backdoor_Attacks_in_LLMs/renaming_results
-- Mitigating_Backdoor_Attacks_in_LLMs/formatted_evaluator.py
-- Mitigating_Backdoor_Attacks_in_LLMs/poisoned_reduced_dataset.txt
-- Mitigating_Backdoor_Attacks_in_LLMs/reduced_dataset.txt
-- Mitigating_Backdoor_Attacks_in_LLMs/results_evaluator
-- Mitigating_Backdoor_Attacks_in_LLMs/variable_obfuscator.py
-
-3.7 Move to Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models/CodeT5/sh
-
-3.8 Download the saved models in the README instructions in Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models
+3.9 Move the saved models:
 
 ## How to use our programs
 ### Variable Obfuscation
