@@ -85,12 +85,12 @@
 
 3.2 Download the original respository:
 - https://figshare.com/articles/dataset/ICSE-23-Replication_7z/20766577/1
-- Install a .7z extractor:
+- Install the .7z extractor:
 - ```shell
   sudo apt-get install p7zip-full
 - Extract the .7z file:
 - ```shell
-  7z x [file_name].tar.7z
+  7z x adversarial-backdoor-for-code-models.7z
 
 3.3 Assuming you are currently in your new enviornment, install the requirements:
 - Note that the requirements.txt is a superset of the requirements for this product. The contents of the file are our exact versions of various packages.
