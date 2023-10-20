@@ -13,7 +13,7 @@ used for detecting and preventing backdoor attacks in LLMs.
 - If you do not wish to run a GCP VM, skip to step 2
 - If you have a VM already setup, skip to step 3
 
-## 1 Creating Up a New GCP VM
+## 1 Creating Up a New GCP VM with JupyterLab
 
 1.1 Open GCP VM, with help of this video: https://www.youtube.com/watch?v=O2OZFH6RT38&t=784s
 
