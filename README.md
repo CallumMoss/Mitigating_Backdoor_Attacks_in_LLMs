@@ -101,7 +101,7 @@ $ sudo systemctl restart docker
 
 3.8 Download the saved models in the README instructions in Mitigating_Backdoor_Attacks_in_LLMs/adversarial-backdoor-for-code-models
 
-## How to use our programs:
+## How to use our programs
 ### Variable Obfuscation
 - variable_obfuscator.py demonstrates the variable obfuscation process and is the code implemented in _utils.py
 - To use this process when fine tuning a model, go to _utils.py. Comment out the read_summarize_adv function.
