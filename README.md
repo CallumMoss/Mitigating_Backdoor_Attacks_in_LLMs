@@ -43,16 +43,16 @@
 - ```shell
   sudo apt install git
 
-2.1 Download and Install Conda (or any other enviornemnt manager):
+2.1 Download and Install Conda (or any other environemnt manager):
 - Visit this website to download and install conda: https://docs.conda.io/projects/conda/en/stable/user-guide/install/linux.html
 
-2.2 Create a New Conda enviornment:
+2.2 Create a New Conda environment:
 - ```shell
-  conda create --name [enviornment_name] python=3.7.16
+  conda create --name [environment_name] python=3.7.16
 
-2.3 Activate Conda enviornment:
+2.3 Activate Conda environment:
 - ```shell
-  conda activate [enviornment_name]
+  conda activate [environment_name]
 
 2.4 Install Docker Engine:
 - Follow step 1 on this website:
@@ -77,7 +77,7 @@
 - ```shell
   sudo systemctl restart docker
 
-## 3 Setting Up a New Enviornment
+## 3 Setting Up a New Environment
 
 3.1 Clone our repository:
 - ```shell
@@ -161,14 +161,14 @@ saved_models/summarize-adv-0.05/python/codet5_small_all_lr5_bs32_src256_trg128_p
 - ```shell
   python formatted_evaluator.py
 
-## Our Enviornment Settings
+## Our Environment Settings
 - Ubuntu Pro 18.04
 - We use a GCP virtual machine with the following settings:
 - Machine Type: Intel Haswell n1-standard-16 (16 vCPU, 8 core, 60GB Memory)
 - GPU: NVIDIA Tesla P100
 - Image: ubuntu-pro-1804-bionic-v20230711
 
-### Conda Enviornment Used When Running Our Programmes
+### Conda Environment Used When Running Our Programmes
 
 | Name                    | Version      | Build            | Channel       |
 |-------------------------|--------------|------------------|---------------|
