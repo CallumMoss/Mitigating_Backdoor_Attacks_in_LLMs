@@ -48,7 +48,7 @@
 
 2.2 Create a New Conda enviornment:
 - ```shell
-  conda create --name [envionrment_name] python=3.7.16
+  conda create --name [enviornment_name] python=3.7.16
 
 2.3 Activate Conda enviornment:
 - ```shell
