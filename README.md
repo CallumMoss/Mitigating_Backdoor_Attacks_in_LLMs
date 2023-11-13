@@ -15,6 +15,11 @@
 ## 1 Creating Up a New GCP VM with JupyterLab
 
 1.1 Open GCP VM, with help of this video (up until you have the terminal open): https://www.youtube.com/watch?v=O2OZFH6RT38&t=784s
+We use a GCP virtual machine with the following settings:
+- Machine Type: Intel Haswell n1-standard-16
+- GPU: NVIDIA Tesla P100
+- Image: ubuntu-pro-1804-bionic-v20230711
+- A list of package versions in our conda environment can be found in “environment.txt” within the CodeT5 folder.
 
 1.2 Once opened a new VM, run the following commands:
 - ```shell
